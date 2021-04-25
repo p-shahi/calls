@@ -1,0 +1,6 @@
+service : {
+    "update_from_query": () -> (opt nat32);
+    "update_from_update": () -> (opt nat32);
+    "query_from_query": () -> (opt nat32) query;
+    "query_from_update": () -> (opt nat32) query;
+}

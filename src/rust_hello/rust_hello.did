@@ -1,0 +1,4 @@
+service : {
+    "a_query_method": () -> (opt nat32) query;
+    "an_update_method": () -> (opt nat32);
+}

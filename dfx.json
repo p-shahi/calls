@@ -1,21 +1,28 @@
 {
   "canisters": {
     "rust_hello": {
-      "main": "src/rust_hello/main.mo",
-      "type": "motoko"
+      "build": "cargo build --target wasm32-unknown-unknown --package rust_hello",
+      "candid": "src/rust_hello/rust_hello.did",
+      "wasm": "target/wasm32-unknown-unknown/debug/rust_hello.wasm",
+      "type": "custom"
     },
-    "rust_hello_assets": {
+    "rust_hello2": {
+      "build": "cargo build --target wasm32-unknown-unknown --package rust_hello2",
+      "candid": "src/rust_hello2/rust_hello2.did",
+      "wasm": "target/wasm32-unknown-unknown/debug/rust_hello2.wasm",
+      "type": "custom",
       "dependencies": [
         "rust_hello"
-      ],
-      "frontend": {
-        "entrypoint": "src/rust_hello_assets/src/index.html"
-      },
-      "source": [
-        "src/rust_hello_assets/assets",
-        "dist/rust_hello_assets/"
-      ],
-      "type": "assets"
+      ]
+    },
+    "rust_hello3": {
+      "build": "cargo build --target wasm32-unknown-unknown --package rust_hello3",
+      "candid": "src/rust_hello3/rust_hello3.did",
+      "wasm": "target/wasm32-unknown-unknown/debug/rust_hello3.wasm",
+      "type": "custom",
+      "dependencies": [
+        "rust_hello2"
+      ]
     }
   },
   "defaults": {
@@ -23,7 +30,6 @@
       "packtool": ""
     }
   },
-  "dfx": "0.7.0-beta.3",
   "networks": {
     "local": {
       "bind": "127.0.0.1:8000",

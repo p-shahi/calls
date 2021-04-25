@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "src/rust_hello",
+    "src/rust_hello2",
+    "src/rust_hello3",
+]

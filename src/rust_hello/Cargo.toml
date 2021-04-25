@@ -1,0 +1,14 @@
+[package]
+name = "rust_hello"
+version = "0.1.0"
+authors = ["Your Name <your-email@example.com>"]
+edition = "2018"
+
+[lib]
+path = "main.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+ic-cdk = "0.2.4"
+ic-cdk-macros = "0.2.4"
+serde = "1.0.116"
